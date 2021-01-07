@@ -24,7 +24,7 @@ view: distribution_centers {
 
   dimension: full_name {
     type:  string
-    sql: ${name} || "ASUT" ;;
+    sql: ${name} || ' ASUT' ;;
   }
 
   measure: count {
