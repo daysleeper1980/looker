@@ -12,6 +12,8 @@ datagroup: insider_default_datagroup {
 
 explore: distribution_centers {}
 
+explore: dimensialize_measure {}
+
 explore: etl_jobs {}
 
 explore: events {
