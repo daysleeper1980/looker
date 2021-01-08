@@ -82,6 +82,13 @@ view: users {
     sql: ${TABLE}."ZIP" ;;
   }
 
+  dimension: event_user_name {
+    type: string
+    sql: ${TABLE}.event_user_name ;;
+    suggest_explore: user
+    suggest_dimension: user.name
+  }
+
   measure: count {
     type: count
     drill_fields: [id, first_name, last_name, events.count, order_items.count]
