@@ -84,7 +84,7 @@ view: users {
 
   dimension: event_user_name {
     type: string
-    sql: ${TABLE}.user ;;
+    sql: ${TABLE}.event_user_name ;;
     suggest_explore: user
     suggest_dimension: user.name
   }
