@@ -72,4 +72,15 @@ explore: products {
   }
 }
 
-explore: users {}
+
+explore: users {
+  aggregate_table: users_agre_example {
+    query: {
+      dimensions: [age,country]
+      measures: [count]
+    }
+    materialization: {
+      sql_trigger_value: SELECT CURRENT-DATE;;
+    }
+  }
+}
