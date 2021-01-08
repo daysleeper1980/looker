@@ -90,6 +90,12 @@ view: order_items {
     sql: ${TABLE}."USER_ID" ;;
   }
 
+  dimension: event_user_name {
+    type: string
+    sql: ${TABLE}.event_user_name ;;
+    suggest_explore: user
+    suggest_dimension: user.name
+  }
   measure: count {
     type: count
     drill_fields: [detail*]
