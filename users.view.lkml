@@ -12,6 +12,10 @@ view: users {
     sql: ${TABLE}."AGE" ;;
   }
 
+dimension: age_tier{
+  type: tier
+  tiers: [10,20,30,40,50,60]
+}
 
 
   dimension: city {
@@ -99,6 +103,10 @@ dimension: kontrol {
 
   measure: count {
     type: count
+    filters: {
+      field: kontrol
+      value: "yes"
+    }
     drill_fields: [id, first_name, last_name, events.count, order_items.count]
   }
 
