@@ -26,5 +26,24 @@ persist_with: aithinka_demo_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: users {
-  label: "Kullanıcı Demografisi"
+  label: "1-Kullanıcı Demografisi"
+  fields: [age,country]
+}
+
+
+explore: order_items {
+  label: "2- Kullanıcı Siparişleri"
+
+
+join: inventory_items {
+  type: left_outer
+  relationship: one_to_one
+  sql_on: ${order_items.inventory_item_id} =${inventory_items.id} ;;
+}
+
+join: users {
+  type: left_outer
+  relationship: many_to_one
+  sql_on: ${order_items.user_id}= ${users.id} ;;
+}
 }
