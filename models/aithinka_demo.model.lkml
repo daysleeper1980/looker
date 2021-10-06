@@ -27,7 +27,7 @@ persist_with: aithinka_demo_default_datagroup
 
 explore: users {
   label: "1-Kullanıcı Demografisi"
-  fields: [age,country]
+  fields: [users.age,users.country]
 }
 
 
