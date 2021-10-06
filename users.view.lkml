@@ -12,10 +12,14 @@ view: users {
     sql: ${TABLE}."AGE" ;;
   }
 
+
+
   dimension: city {
     type: string
     sql: ${TABLE}."CITY" ;;
   }
+
+
 
   dimension: country {
     type: string
@@ -52,6 +56,10 @@ view: users {
     sql: ${TABLE}."GENDER" ;;
   }
 
+dimension: kontrol {
+  type: yesno
+  sql: ${age}<50 ;;
+}
   dimension: last_name {
     type: string
     sql: ${TABLE}."LAST_NAME" ;;
